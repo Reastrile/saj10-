@@ -1,1 +1,30 @@
-
+<p id="randomlink"></p>
+<html>
+  <body>
+    <script>
+      var real_link = "QsJmYuM";
+      var key = Math.floor((Math.random() * 100) + 1);
+      
+      function randomtext(text,key) {
+        var Characters = ["A","B","C","D","E","F","G","H","I","J","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9"];
+        var Link = text.split('');
+        var NewLink = [];
+        
+        for (i = 0 ; i < Link.length; i++) {
+          item = Characters.findIndex(Link[i]) + key;
+          
+          if (item > (Characters.Length - 1)) {
+            item = (Characters.length - 1) - item;
+          }
+          
+          NewLink.push(Characters[item]);
+        }
+        
+        return NewLink.toString();
+      }
+      
+      var fake_link = randomtext(real_link,key);
+      document.getElementById("randomlink").innerHTML = ("https://discord.gg/" + fake_link)
+    </script>
+  </body>
+</html>
