@@ -14,8 +14,11 @@
         for (i = 0 ; i < Link.length ; i++) {
           item = Characters.indexOf(Link[i]) + key;
           
-          if (item > (Characters.length - 1)) {
-            item = (Characters.length - 1) - item;
+          while (item > (Characters.length - 1)) {
+            item = item - Characters.length - 1));
+          }
+          if (item < 0) {
+            item = 0;
           }
           
           NewLink.push(Characters[item]);
